@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getUserRequest } from "../api/user.api";
-import UserCard from "../components/UserCard";
+import { getUserRequest } from "../../../api/user/cu3.GestionarUsuario.api";
+import UserCard from "../../../components/UserCard";
 
 function UserPage() {
   const [users, setUsers] = useState([]);

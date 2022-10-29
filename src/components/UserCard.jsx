@@ -1,4 +1,4 @@
-import { deleteUserRequest } from "../api/user.api";
+import { deleteUserRequest } from "../api/user/cu3.GestionarUsuario.api";
 
 function UserCard({ user }) {
   const handleDelete = async (id) => {

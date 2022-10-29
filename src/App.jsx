@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 
-import UserPage from "../src/pages/UserPage";
-import UserForm from "../src/pages/UserForm";
-import NotFound from "../src/pages/NotFound";
+import UserPage from "./pages/user.pages/cu3.GestionarUsuario/UserPage";
+import UserForm from "./pages/user.pages/cu3.GestionarUsuario/UserForm";
+import NotFound from "./pages/NotFound";
 
 import Navbar from "./components/Navbar";
 
