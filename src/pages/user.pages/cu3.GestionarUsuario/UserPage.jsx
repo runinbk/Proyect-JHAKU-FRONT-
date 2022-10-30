@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
-import { getUserRequest } from "../../../api/user/cu3.GestionarUsuario.api";
 import UserCard from "../../../components/UserCard";
+import { useUser } from "../../../context/user.context/cu3.GestionarUsuario/UserProvider";
 
 function UserPage() {
-  const [users, setUsers] = useState([]);
+  const { getUsers, users } = useUser();
 
   useEffect(() => {
-    async function loadUsers() {
-      const response = await getUserRequest();
-      setUsers(response.data);
-    }
-    loadUsers();
+    getUsers();
   }, []);
 
   function renderMain() {
@@ -21,7 +17,7 @@ function UserPage() {
   return (
     <div>
       <h1>User</h1>
-      {renderMain()}
+      <div>{renderMain()}</div>
     </div>
   );
 }
