@@ -25,29 +25,32 @@ function App() {
   );
 }
 */
-import EmployPage from "./pages/user.pages/cu20.GestionarEmpleado/EmployPage"
-import EmployForm from "./pages/user.pages/cu20.GestionarEmpleado/EmployForm"
-import NotFound from "./pages/NotFound"
-import { EmployContextProvider } from "./context/user.context/cu20.GestionarEmpleado/EmployProvider";
+//import EmployPage from "./pages/user.pages/cu20.GestionarEmpleado/EmployPage"
+//import EmployForm from "./pages/user.pages/cu20.GestionarEmpleado/EmployForm"
+import NotFound from "./pages/NotFound";
+//import { EmployContextProvider } from "./context/user.context/cu20.GestionarEmpleado/EmployProvider";
+import ClientPage from "./pages/sales.pages/cu5.GestionarClienes/ClientPage";
+import ClientForm from "./pages/sales.pages/cu5.GestionarClienes/ClientForm";
+import { ClientContextProvider } from "./context/sales.context/cu5.GestionarClientes/ClientProvider";
 
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar";
 
-function App(){
+function App() {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div>
-        <EmployContextProvider>
+        <ClientContextProvider>
           <Routes>
-            <Route path="/" element={<EmployPage />} />
-            <Route path="/form" element={<EmployForm />} />
-            <Route path="/edit/:id" element={<EmployForm />} />
+            <Route path="/" element={<ClientPage />} />
+            <Route path="/form" element={<ClientForm />} />
+            <Route path="/edit/:id" element={<ClientForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </EmployContextProvider>
+        </ClientContextProvider>
       </div>
     </div>
   );
-} 
+}
 
 export default App;
