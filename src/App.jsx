@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-
+/*
 import UserPage from "./pages/user.pages/cu3.GestionarUsuario/UserPage";
 import UserForm from "./pages/user.pages/cu3.GestionarUsuario/UserForm";
 import NotFound from "./pages/NotFound";
@@ -24,5 +24,30 @@ function App() {
     </div>
   );
 }
+*/
+import EmployPage from "./pages/user.pages/cu20.GestionarEmpleado/EmployPage"
+import EmployForm from "./pages/user.pages/cu20.GestionarEmpleado/EmployForm"
+import NotFound from "./pages/NotFound"
+import { EmployContextProvider } from "./context/user.context/cu20.GestionarEmpleado/EmployProvider";
+
+import Navbar from "./components/Navbar"
+
+function App(){
+  return (
+    <div>
+      <Navbar/>
+      <div>
+        <EmployContextProvider>
+          <Routes>
+            <Route path="/" element={<EmployPage />} />
+            <Route path="/form" element={<EmployForm />} />
+            <Route path="/edit/:id" element={<EmployForm />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </EmployContextProvider>
+      </div>
+    </div>
+  );
+} 
 
 export default App;
