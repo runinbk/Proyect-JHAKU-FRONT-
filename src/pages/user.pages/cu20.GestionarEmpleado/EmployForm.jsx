@@ -8,8 +8,13 @@ function EmployForm() {
 
   const [employ, setEmploy] = useState({
     id: "",
-    login: "",
-    password: "",
+    nombre: "",
+    apellido: "",
+    ci: "",
+    direccion: "",
+    sexo: "",
+    idCargo: "",
+    idUsuario: "",
   });
 
   const params = useParams();
@@ -21,8 +26,13 @@ function EmployForm() {
         const employ = await getEmploy(params.id);
         setEmploy({
           id: employ.id,
-          login: employ.login,
-          password: employ.password,
+          nombre: employ.nombre,
+          apellido: employ.apellido,
+          ci: employ.ci,
+          direccion: employ.direccion,
+          sexo: employ.sexo,
+          idCargo: employ.idCargo,
+          idUsuario: employ.idUsuario,
         });
       }
     };
@@ -44,41 +54,91 @@ function EmployForm() {
           }
           setEmploy({
             id: "",
-            login: "",
-            password: "",
+            nombre: "",
+            apellido: "",
+            ci: "",
+            direccion: "",
+            sexo: "",
+            idCargo: "",
+            idUsuario: "",
           });
         }}
       >
         {({ handleChange, handleSubmit, values, isSubmitting }) => (
           <Form onSubmit={handleSubmit}>
             <h1>{params.id ? "Edit Empleado" : "Create Empleado"}</h1>
+
             <label>ID</label>
             <input
               type="text"
               name="id"
-              placeholder="Write a ID"
-              onChange={handleChange}
               value={values.id}
+              onChange={handleChange}
             />
 
-            <label>Login</label>
+            <label>NOMBRE</label>
             <input
               type="text"
-              name="login"
-              placeholder="Write a LogIn"
+              name="nombre"
+              placeholder="Write a NOMBRE"
               onChange={handleChange}
-              value={values.login}
+              value={values.nombre}
             />
-        
-            <label>Password</label>
+
+            <label>APELLIDO</label>
             <input
               type="text"
-              name="password"
-              placeholder="Write a Password"
+              name="apellido"
+              placeholder="Write a APELLIDO"
               onChange={handleChange}
-              value={values.password}
+              value={values.apellido}
             />
-          
+
+            <label>CI</label>
+            <input
+              type="text"
+              name="ci"
+              placeholder="Write a CI"
+              onChange={handleChange}
+              value={values.ci}
+            />
+
+            <label>DIRECCION</label>
+            <input
+              type="text"
+              name="direccion"
+              placeholder="Write a DIRECCION"
+              onChange={handleChange}
+              value={values.direccion}
+            />
+
+            <label>SEXO</label>
+            <input
+              type="text"
+              name="sexo"
+              placeholder="Write a SEXO"
+              onChange={handleChange}
+              value={values.sexo}
+            />
+
+            <label>IDCARGO</label>
+            <input
+              type="text"
+              name="idCargo"
+              placeholder="Write a IDCARGO"
+              onChange={handleChange}
+              value={values.idCargo}
+            />
+
+            <label>IDUSUARIO</label>
+            <input
+              type="text"
+              name="idUsuario"
+              placeholder="Write a IDUSUARIO"
+              onChange={handleChange}
+              value={values.idUsuario}
+            />
+
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Saving..." : "Save"}
             </button>
