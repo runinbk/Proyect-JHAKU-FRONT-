@@ -29,9 +29,14 @@ function App() {
 //import EmployForm from "./pages/user.pages/cu20.GestionarEmpleado/EmployForm"
 import NotFound from "./pages/NotFound";
 //import { EmployContextProvider } from "./context/user.context/cu20.GestionarEmpleado/EmployProvider";
-import ClientPage from "./pages/sales.pages/cu5.GestionarClienes/ClientPage";
-import ClientForm from "./pages/sales.pages/cu5.GestionarClienes/ClientForm";
-import { ClientContextProvider } from "./context/sales.context/cu5.GestionarClientes/ClientProvider";
+
+//import ClientPage from "./pages/sales.pages/cu5.GestionarClienes/ClientPage";
+//import ClientForm from "./pages/sales.pages/cu5.GestionarClienes/ClientForm";
+//import { ClientContextProvider } from "./context/sales.context/cu5.GestionarClientes/ClientProvider";
+
+import OrderPage from "./pages/sales.pages/cu7.GestionarPedido/OrderPage";
+import OrderForm from "./pages/sales.pages/cu7.GestionarPedido/OrderForm";
+import { OrderContextProvider } from "./context/sales.context/cu7.GestionarPedido/OrderProvider";
 
 import Navbar from "./components/Navbar";
 
@@ -40,14 +45,14 @@ function App() {
     <div>
       <Navbar />
       <div>
-        <ClientContextProvider>
+        <OrderContextProvider>
           <Routes>
-            <Route path="/" element={<ClientPage />} />
-            <Route path="/form" element={<ClientForm />} />
-            <Route path="/edit/:id" element={<ClientForm />} />
+            <Route path="/" element={<OrderPage />} />
+            <Route path="/form" element={<OrderForm />} />
+            <Route path="/edit/:id" element={<OrderForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </ClientContextProvider>
+        </OrderContextProvider>
       </div>
     </div>
   );
