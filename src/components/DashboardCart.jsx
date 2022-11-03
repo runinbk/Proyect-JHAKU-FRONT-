@@ -14,7 +14,7 @@ function DashboardCart() {
       </div>
 
       <div
-        onClick={() => navigate(`/usuario`)}
+        onClick={() => navigate(`/ClientPage`)}
         className="bg-amber-600 text-white rounded-md p-4"
       >
         <header className="flex justify-between">

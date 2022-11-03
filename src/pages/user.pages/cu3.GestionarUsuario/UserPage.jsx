@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import UserCard from "../../../components/UserCard";
 import { useUser } from "../../../context/user.context/cu3.GestionarUsuario/UserProvider";
+import { Form } from "formik";
 
 function UserPage() {
   const { getUsers, users } = useUser();
@@ -15,8 +16,8 @@ function UserPage() {
   }
 
   return (
-    <div>
-      <div className="grid grid-cols-1 py-10 px-5 gap-2">{renderMain()}</div>
+    <div className="bg-slate-300 max-w-lg rounded-md p-4 mx-auto mt-10">
+      <div className="p-0">{renderMain()}</div>
     </div>
   );
 }

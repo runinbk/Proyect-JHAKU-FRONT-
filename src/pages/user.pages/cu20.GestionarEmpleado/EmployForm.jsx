@@ -65,83 +65,100 @@ function EmployForm() {
         }}
       >
         {({ handleChange, handleSubmit, values, isSubmitting }) => (
-          <Form onSubmit={handleSubmit}>
-            <h1>{params.id ? "Edit Empleado" : "Create Empleado"}</h1>
+          <Form
+            onSubmit={handleSubmit}
+            className="bg-slate-300 max-w-sm rounded-md p-4 mx-auto mt-10"
+          >
+            <h1 className="text-xl font-bold uppercase text-center">
+              {params.id ? "Edit Empleado" : "Create Empleado"}
+            </h1>
 
-            <label>ID</label>
-            <input
-              type="text"
-              name="id"
-              value={values.id}
-              onChange={handleChange}
-            />
-
-            <label>NOMBRE</label>
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Write a NOMBRE"
-              onChange={handleChange}
-              value={values.nombre}
-            />
-
-            <label>APELLIDO</label>
-            <input
-              type="text"
-              name="apellido"
-              placeholder="Write a APELLIDO"
-              onChange={handleChange}
-              value={values.apellido}
-            />
-
-            <label>CI</label>
-            <input
-              type="text"
-              name="ci"
-              placeholder="Write a CI"
-              onChange={handleChange}
-              value={values.ci}
-            />
-
-            <label>DIRECCION</label>
-            <input
-              type="text"
-              name="direccion"
-              placeholder="Write a DIRECCION"
-              onChange={handleChange}
-              value={values.direccion}
-            />
-
-            <label>SEXO</label>
-            <input
-              type="text"
-              name="sexo"
-              placeholder="Write a SEXO"
-              onChange={handleChange}
-              value={values.sexo}
-            />
-
-            <label>IDCARGO</label>
-            <input
-              type="text"
-              name="idCargo"
-              placeholder="Write a IDCARGO"
-              onChange={handleChange}
-              value={values.idCargo}
-            />
-
-            <label>IDUSUARIO</label>
-            <input
-              type="text"
-              name="idUsuario"
-              placeholder="Write a IDUSUARIO"
-              onChange={handleChange}
-              value={values.idUsuario}
-            />
-
-            <button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Saving..." : "Save"}
-            </button>
+            <div className="mt-4">
+              <label className="block">NOMBRE</label>
+              <input
+                type="text"
+                name="nombre"
+                placeholder="Write a NOMBRE"
+                onChange={handleChange}
+                value={values.nombre}
+                className="px-2 py-1 rounded-sm w-full"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block">APELLIDO</label>
+              <input
+                type="text"
+                name="apellido"
+                placeholder="Write a APELLIDO"
+                onChange={handleChange}
+                value={values.apellido}
+                className="px-2 py-1 rounded-sm w-full"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block">CI</label>
+              <input
+                type="text"
+                name="ci"
+                placeholder="Write a CI"
+                onChange={handleChange}
+                value={values.ci}
+                className="px-2 py-1 rounded-sm w-full"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block">DIRECCION</label>
+              <input
+                type="text"
+                name="direccion"
+                placeholder="Write a DIRECCION"
+                onChange={handleChange}
+                value={values.direccion}
+                className="px-2 py-1 rounded-sm w-full"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block">SEXO</label>
+              <input
+                type="text"
+                name="sexo"
+                placeholder="Write a SEXO"
+                onChange={handleChange}
+                value={values.sexo}
+                className="px-2 py-1 rounded-sm w-full"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block">IDCARGO</label>
+              <input
+                type="text"
+                name="idCargo"
+                placeholder="Write a IDCARGO"
+                onChange={handleChange}
+                value={values.idCargo}
+                className="px-2 py-1 rounded-sm w-full"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block">IDUSUARIO</label>
+              <input
+                type="text"
+                name="idUsuario"
+                placeholder="Write a IDUSUARIO"
+                onChange={handleChange}
+                value={values.idUsuario}
+                className="px-2 py-1 rounded-sm w-full"
+              />
+            </div>
+            <div className="mt-4">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="block bg-indigo-500 px-2 py-1 p-5 text-white w-full rounded-md"
+              >
+                {isSubmitting ? "Saving..." : "Save"}
+              </button>
+            </div>
           </Form>
         )}
       </Formik>

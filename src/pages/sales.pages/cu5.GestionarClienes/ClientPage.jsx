@@ -17,9 +17,8 @@ function ClientPage() {
   }
 
   return (
-    <div>
-      <h1>Client</h1>
-      <div>{renderMain()}</div>
+    <div className="bg-slate-300 max-w-lg rounded-md p-4 mx-auto mt-10">
+      <div className="p-0">{renderMain()}</div>
     </div>
   );
 }

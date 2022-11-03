@@ -57,52 +57,64 @@ function ProductForm() {
         }}
       >
         {({ handleChange, handleSubmit, values, isSubmitting }) => (
-          <Form onSubmit={handleChange}>
-            <h1>{params.id ? "Edit Product" : "Create Product"}</h1>
+          <Form
+            onSubmit={handleChange}
+            className="bg-slate-300 max-w-sm rounded-md p-4 mx-auto mt-10"
+          >
+            <h1 className="text-xl font-bold uppercase text-center">
+              {params.id ? "Edit Product" : "Create Product"}
+            </h1>
             <div>
-              <label>Nombre</label>
-              <input
-                type="text"
-                name="nombre"
-                value={values.nombre}
-                onChange={handleChange}
-              />
+              <div className="mt-4">
+                <label className="block">Nombre</label>
+                <input
+                  type="text"
+                  name="nombre"
+                  value={values.nombre}
+                  onChange={handleChange}
+                  className="px-2 py-1 rounded-sm w-full"
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block">Precio</label>
+                <input
+                  type="text"
+                  name="precio"
+                  value={values.precio}
+                  onChange={handleChange}
+                  className="px-2 py-1 rounded-sm w-full"
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block">Descripcion</label>
+                <input
+                  type="text"
+                  name="descripcion"
+                  value={values.descripcion}
+                  onChange={handleChange}
+                  className="px-2 py-1 rounded-sm w-full"
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block">IdReceta</label>
+                <input
+                  type="text"
+                  name="idReceta"
+                  value={values.idReceta}
+                  onChange={handleChange}
+                  className="px-2 py-1 rounded-sm w-full"
+                />
+              </div>
 
-              <label>Precio</label>
-              <input
-                type="text"
-                name="precio"
-                value={values.precio}
-                onChange={handleChange}
-              />
-
-              <label>Descripcion</label>
-              <input
-                type="text"
-                name="descripcion"
-                value={values.descripcion}
-                onChange={handleChange}
-              />
-
-              <label>IdReceta</label>
-              <input
-                type="text"
-                name="idReceta"
-                value={values.idReceta}
-                onChange={handleChange}
-              />
-
-              <label>Id</label>
-              <input
-                type="text"
-                name="id"
-                value={values.id}
-                onChange={handleChange}
-              />
-
-              <button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Loading..." : "Submit"}
-              </button>
+              <div className="mt-4">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="block bg-indigo-500 px-2 py-1 text-white w-full rounded-md"
+                >
+                  {isSubmitting ? "Loading..." : "Submit"}
+                </button>
+              </div>
             </div>
           </Form>
         )}

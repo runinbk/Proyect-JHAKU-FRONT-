@@ -61,68 +61,89 @@ function OrderForm() {
       }}
     >
       {({ handleChange, handleSubmit, values, isSubmitting }) => (
-        <Form onSubmit={handleSubmit}>
-          <h1>{params.id ? "Editar Pedido" : "Crear Pedido"}</h1>
+        <Form
+          className="bg-slate-300 max-w-sm rounded-md p-4 mx-auto mt-10"
+          onSubmit={handleSubmit}
+        >
+          <h1 className="text-xl font-bold uppercase text-center">
+            {params.id ? "Editar Pedido" : "Crear Pedido"}
+          </h1>
 
-          <label>ID</label>
-          <input
-            type="text"
-            name="id"
-            value={values.id}
-            onChange={handleChange}
-          />
+          <div className="mt-4">
+            <label className="block">Detalle</label>
+            <input
+              type="text"
+              name="detalle"
+              value={values.detalle}
+              onChange={handleChange}
+              className="px-2 py-1 rounded-sm w-full"
+            />
+          </div>
 
-          <label>Detalle</label>
-          <input
-            type="text"
-            name="detalle"
-            value={values.detalle}
-            onChange={handleChange}
-          />
+          <div className="mt-4">
+            <label className="block">Fecha</label>
+            <input
+              type="text"
+              name="fecha"
+              value={values.fecha}
+              onChange={handleChange}
+              className="px-2 py-1 rounded-sm w-full"
+            />
+          </div>
 
-          <label>Fecha</label>
-          <input
-            type="text"
-            name="fecha"
-            value={values.fecha}
-            onChange={handleChange}
-          />
+          <div className="mt-4">
+            <label className="block">Fecha de Entrega</label>
+            <input
+              type="text"
+              name="fechaEntrega"
+              value={values.fechaEntrega}
+              onChange={handleChange}
+              className="px-2 py-1 rounded-sm w-full"
+            />
+          </div>
 
-          <label>Fecha de Entrega</label>
-          <input
-            type="text"
-            name="fechaEntrega"
-            value={values.fechaEntrega}
-            onChange={handleChange}
-          />
+          <div className="mt-4">
+            <label className="block">Total</label>
+            <input
+              type="text"
+              name="total"
+              value={values.total}
+              onChange={handleChange}
+              className="px-2 py-1 rounded-sm w-full"
+            />
+          </div>
 
-          <label>Total</label>
-          <input
-            type="text"
-            name="total"
-            value={values.total}
-            onChange={handleChange}
-          />
+          <div className="mt-4">
+            <label className="block">ID Empleado</label>
+            <input
+              type="text"
+              name="idEmpleado"
+              value={values.idEmpleado}
+              onChange={handleChange}
+              className="px-2 py-1 rounded-sm w-full"
+            />
+          </div>
 
-          <label>ID Empleado</label>
-          <input
-            type="text"
-            name="idEmpleado"
-            value={values.idEmpleado}
-            onChange={handleChange}
-          />
+          <div className="mt-4">
+            <label className="block">ID Cliente</label>
+            <input
+              type="text"
+              name="idCliente"
+              value={values.idCliente}
+              onChange={handleChange}
+              className="px-2 py-1 rounded-sm w-full"
+            />
+          </div>
 
-          <label>ID Cliente</label>
-          <input
-            type="text"
-            name="idCliente"
-            value={values.idCliente}
-            onChange={handleChange}
-          />
-
-          <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Loading..." : "Submit"}
-          </button>
+          <div className="mt-4">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="block bg-indigo-500 px-2 py-1 text-white w-full rounded-md"
+            >
+              {isSubmitting ? "Loading..." : "Submit"}
+            </button>
+          </div>
         </Form>
       )}
     </Formik>

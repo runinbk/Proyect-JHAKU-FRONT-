@@ -89,20 +89,12 @@ function Navbar() {
             {dropdownVentas && <DropdownVentas />}
           </li>
           <li className="nav-item">
-            <Link
-              to="/contact-us"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
+            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
               Inventario
             </Link>
           </li>
           <li className="nav-item">
-            <Link
-              to="/contact-us"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
+            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
               Produccion
             </Link>
           </li>

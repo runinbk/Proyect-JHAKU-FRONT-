@@ -6,8 +6,8 @@ function UserCard({ user }) {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <div className="bg-amber-900 text-white  rounded-md p-4">
+    <div className="p-1">
+      <div className="bg-slate-400 text-black  rounded-md p-4">
         <header className="flex justify-between">
           <h1 className="text-sm font-bold">{user.id}</h1>
         </header>
@@ -15,13 +15,13 @@ function UserCard({ user }) {
         <span className="text-sm font-bold">{user.password}</span>
         <div className="flex gap-x-1">
           <button
-            className="bg-slate-300 px-2 py-1 text-black"
+            className="bg-lime-400 px-2 py-1 text-black rounded-md"
             onClick={() => navigate(`/UserForm/edit/${user.id}`)}
           >
             Edit
           </button>
           <button
-            className="bg-slate-300 px-2 py-1 text-black"
+            className="bg-red-500 px-2 py-1 text-black rounded-md"
             onClick={() => deleteUser(user.id)}
           >
             Delete

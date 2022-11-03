@@ -60,61 +60,84 @@ function ClientForm() {
         }}
       >
         {({ handleChange, handleSubmit, values, isSubmitting }) => (
-          <Form onSubmit={handleSubmit}>
-            <h1>{params.id ? "Edit Client" : "Crate Cliente"}</h1>
+          <Form
+            onSubmit={handleSubmit}
+            className="bg-slate-300 max-w-sm rounded-md p-4 mx-auto mt-10"
+          >
+            <h1 className="text-xl font-bold uppercase text-center">
+              {params.id ? "Edit Client" : "Crate Cliente"}
+            </h1>
 
             <div>
-              <label>Nombre</label>
-              <input
-                type="text"
-                name="nombre"
-                value={values.nombre}
-                onChange={handleChange}
-              />
-
-              <label>Apellido</label>
-              <input
-                type="text"
-                name="apellido"
-                value={values.apellido}
-                onChange={handleChange}
-              />
-
-              <label>CI</label>
-              <input
-                type="text"
-                name="ci"
-                value={values.ci}
-                onChange={handleChange}
-              />
-
-              <label>Telefono</label>
-              <input
-                type="text"
-                name="telefono"
-                value={values.telefono}
-                onChange={handleChange}
-              />
-
-              <label>Direccion</label>
-              <input
-                type="text"
-                name="direccion"
-                value={values.direccion}
-                onChange={handleChange}
-              />
-
-              <label>ID</label>
-              <input
-                type="text"
-                name="id"
-                value={values.id}
-                onChange={handleChange}
-              />
-
-              <button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Loading..." : "Submit"}
-              </button>
+              <div className="mt-4">
+                <label className="block">Nombre</label>
+                <input
+                  type="text"
+                  name="nombre"
+                  value={values.nombre}
+                  onChange={handleChange}
+                  className="px-2 py-1 rounded-sm w-full"
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block">Apellido</label>
+                <input
+                  type="text"
+                  name="apellido"
+                  value={values.apellido}
+                  onChange={handleChange}
+                  className="px-2 py-1 rounded-sm w-full"
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block">CI</label>
+                <input
+                  type="text"
+                  name="ci"
+                  value={values.ci}
+                  onChange={handleChange}
+                  className="px-2 py-1 rounded-sm w-full"
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block">Telefono</label>
+                <input
+                  type="text"
+                  name="telefono"
+                  value={values.telefono}
+                  onChange={handleChange}
+                  className="px-2 py-1 rounded-sm w-full"
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block">Direccion</label>
+                <input
+                  type="text"
+                  name="direccion"
+                  value={values.direccion}
+                  onChange={handleChange}
+                  className="px-2 py-1 rounded-sm w-full"
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block">ID</label>
+                <input
+                  type="text"
+                  name="id"
+                  value={values.id}
+                  onChange={handleChange}
+                  className="px-2 py-1 rounded-sm w-full"
+                />
+              </div>
+              <div className="mt-4">
+                <button
+                  className="block bg-indigo-500 px-2 py-1 text-white w-full rounded-md"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Loading..." : "Submit"}
+                </button>
+              </div>
             </div>
           </Form>
         )}

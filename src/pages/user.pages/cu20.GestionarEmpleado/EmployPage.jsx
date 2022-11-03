@@ -11,13 +11,14 @@ function EmployPage() {
 
   function renderMain() {
     if (employs.length === 0) return <h1>No employ yet</h1>;
-    return employs.map((employ) => <EmpleadoCard employ={employ} key={employ.id} />);
+    return employs.map((employ) => (
+      <EmpleadoCard employ={employ} key={employ.id} />
+    ));
   }
 
   return (
-    <div>
-      <h1>Employ</h1>
-      <div>{renderMain()}</div>
+    <div className="bg-slate-300 max-w-lg rounded-md p-4 mx-auto mt-10">
+      <div className="p-0">{renderMain()}</div>
     </div>
   );
 }
