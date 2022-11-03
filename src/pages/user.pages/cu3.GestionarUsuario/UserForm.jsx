@@ -50,27 +50,34 @@ function UserForm() {
         }}
       >
         {({ handleChange, handleSubmit, values, isSubmitting }) => (
-          <Form onSubmit={handleSubmit}>
-            <h1>{params.id ? "Edit User" : "Create User"}</h1>
-            <label>ID</label>
+          <Form
+            onSubmit={handleSubmit}
+            className="bg-slate-300 max-w-sm rounded-md p-4 mx-auto mt-10"
+          >
+            <h1 className="text-xl font-bold uppercase text-center">
+              {params.id ? "Edit User" : "Create User"}
+            </h1>
+            <label className="block">ID</label>
             <input
               type="text"
               name="id"
               placeholder="Write a ID"
               onChange={handleChange}
               value={values.id}
+              className="px-2 py-1 rounded-sm w-full"
             />
 
-            <label>Login</label>
+            <label className="block">Login</label>
             <input
               type="text"
               name="login"
               placeholder="Write a LogIn"
               onChange={handleChange}
               value={values.login}
+              className="px-2 py-1 rounded-sm w-full"
             />
 
-            <label>Password</label>
+            <label className="block">Password</label>
             <input
               type="text"
               name="password"
@@ -78,7 +85,11 @@ function UserForm() {
               onChange={handleChange}
               value={values.password}
             />
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              type="submit"
+              className="block bg-indigo-500 px-2 py-1 text-white w-full rounded-md"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Saving..." : "Save"}
             </button>
           </Form>

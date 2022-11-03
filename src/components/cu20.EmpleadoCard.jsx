@@ -17,7 +17,7 @@ function EmpleadoCard({ employ }) {
       <h2>{employ.sexo}</h2>
       <div>
         <button onClick={() => navigate(`/edit/${employ.id}`)}>Edit</button>
-        <button onClick={() => deleteUser(employ.id)}>Delete</button>
+        <button onClick={() => deleteEmploy(employ.id)}>Delete</button>
       </div>
     </div>
   );

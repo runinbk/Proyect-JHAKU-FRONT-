@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-/*
+
 import UserPage from "./pages/user.pages/cu3.GestionarUsuario/UserPage";
 import UserForm from "./pages/user.pages/cu3.GestionarUsuario/UserForm";
-import NotFound from "./pages/NotFound";
+//import NotFound from "./pages/NotFound";
 import { UserContextProvider } from "./context/user.context/cu3.GestionarUsuario/UserProvider";
-
+/*
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -37,6 +37,7 @@ import NotFound from "./pages/NotFound";
 import OrderPage from "./pages/sales.pages/cu7.GestionarPedido/OrderPage";
 import OrderForm from "./pages/sales.pages/cu7.GestionarPedido/OrderForm";
 import { OrderContextProvider } from "./context/sales.context/cu7.GestionarPedido/OrderProvider";
+import DashboardCart from "./components/DashboardCart";
 
 import Navbar from "./components/Navbar";
 
@@ -45,12 +46,21 @@ function App() {
     <div>
       <Navbar />
       <div>
+        <UserContextProvider>
+          <Routes>
+            <Route path="/UserPage" element={<UserPage />} />
+            <Route path="/UserForm" element={<UserForm />} />
+            <Route path="/UserForm/edit/:id" element={<UserForm />} />
+          </Routes>
+        </UserContextProvider>
+      </div>
+      <div>
         <OrderContextProvider>
           <Routes>
-            <Route path="/" element={<OrderPage />} />
-            <Route path="/form" element={<OrderForm />} />
-            <Route path="/edit/:id" element={<OrderForm />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<DashboardCart />} />
+            <Route path="/OrderPage" element={<OrderPage />} />
+            <Route path="/OrderForm" element={<OrderForm />} />
+            <Route path="/OrderForm/edit/:id" element={<OrderForm />} />
           </Routes>
         </OrderContextProvider>
       </div>
