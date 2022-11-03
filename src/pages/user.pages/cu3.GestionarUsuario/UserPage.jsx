@@ -16,7 +16,7 @@ function UserPage() {
 
   return (
     <div>
-      <div className="grid grid-cols-3 py-10 px-5 gap-2">{renderMain()}</div>
+      <div className="grid grid-cols-1 py-10 px-5 gap-2">{renderMain()}</div>
     </div>
   );
 }

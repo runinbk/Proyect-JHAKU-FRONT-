@@ -3,11 +3,12 @@ import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
+import DropdownVentas from "./DropdownVentas";
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
-
+  const [dropdownVentas, setDropdownVentas] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
@@ -24,6 +25,22 @@ function Navbar() {
       setDropdown(false);
     } else {
       setDropdown(false);
+    }
+  };
+
+  const onMouseEnterV = () => {
+    if (window.innerWidth < 960) {
+      setDropdownVentas(false);
+    } else {
+      setDropdownVentas(true);
+    }
+  };
+
+  const onMouseLeaveV = () => {
+    if (window.innerWidth < 960) {
+      setDropdownVentas(false);
+    } else {
+      setDropdownVentas(false);
     }
   };
 
@@ -49,21 +66,35 @@ function Navbar() {
             onMouseLeave={onMouseLeave}
           >
             <Link
-              to="/services"
+              to="/UserPage"
               className="nav-links"
               onClick={closeMobileMenu}
             >
-              Usuario <i className="fas fa-caret-down" />
+              Personal <i className="fas fa-caret-down" />
             </Link>
             {dropdown && <Dropdown />}
           </li>
-          <li className="nav-item">
+          <li
+            className="nav-item"
+            onMouseEnter={onMouseEnterV}
+            onMouseLeave={onMouseLeaveV}
+          >
             <Link
-              to="/products"
+              to="/ClientPage"
               className="nav-links"
               onClick={closeMobileMenu}
             >
-              Ventas
+              Ventas <i className="fas fa-caret-down" />
+            </Link>
+            {dropdownVentas && <DropdownVentas />}
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/contact-us"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Inventario
             </Link>
           </li>
           <li className="nav-item">
