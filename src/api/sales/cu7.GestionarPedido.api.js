@@ -1,16 +1,24 @@
 import axios from "axios";
 
 export const getPedidosRequest = async () =>
-  await axios.get("http://localhost:3000/pedido");
+  await axios.get("https://backend-si1-production.up.railway.app/pedido");
 
 export const createPedidoRequest = async (pedido) =>
-  await axios.post("http://localhost:3000/pedido", pedido);
+  await axios.post(
+    "https://backend-si1-production.up.railway.app/pedido",
+    pedido
+  );
 
 export const deletePedidoRequest = async (id) =>
-  await axios.delete(`http://localhost:3000/pedido/${id}`);
+  await axios.delete(
+    `https://backend-si1-production.up.railway.app/pedido/${id}`
+  );
 
 export const getPedidoRequest = async (id) =>
-  await axios.get(`http://localhost:3000/pedido/${id}`);
+  await axios.get(`https://backend-si1-production.up.railway.app/pedido/${id}`);
 
 export const updatePedidoRequest = async (id, newFiles) =>
-  await axios.put(`http://localhost:3000/pedido/${id}`, newFiles);
+  await axios.put(
+    `https://backend-si1-production.up.railway.app/pedido/${id}`,
+    newFiles
+  );

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import UserCard from "../../../components/UserCard";
 import { useUser } from "../../../context/user.context/cu3.GestionarUsuario/UserProvider";
 import { Form } from "formik";
+import { useNavigate } from "react-router-dom";
 
 function UserPage() {
   const { getUsers, users } = useUser();
@@ -15,9 +16,21 @@ function UserPage() {
     return users.map((user) => <UserCard user={user} key={user.id} />);
   }
 
+  const navigate = useNavigate();
+
   return (
-    <div className="bg-slate-300 max-w-lg rounded-md p-4 mx-auto mt-10">
-      <div className="p-0">{renderMain()}</div>
+    <div className="  todo-app">
+      <h2 className="text-2xl font-bold text-center p-2">Usuarios</h2>
+      <div>
+        <button
+          className="bg-lime-400 p-2 px-2 py-1 text-black rounded-md m-2"
+          onClick={() => navigate(`/UserForm`)}
+        >
+          Crear
+        </button>
+      </div>
+
+      <div>{renderMain()}</div>
     </div>
   );
 }

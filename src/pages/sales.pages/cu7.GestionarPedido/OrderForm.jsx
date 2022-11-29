@@ -62,7 +62,7 @@ function OrderForm() {
     >
       {({ handleChange, handleSubmit, values, isSubmitting }) => (
         <Form
-          className="bg-slate-300 max-w-sm rounded-md p-4 mx-auto mt-10"
+          className="bg-slate-300 max-w-sm rounded-md p-4 mx-auto mt-10  todo-app"
           onSubmit={handleSubmit}
         >
           <h1 className="text-xl font-bold uppercase text-center">

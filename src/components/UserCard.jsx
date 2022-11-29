@@ -6,22 +6,24 @@ function UserCard({ user }) {
   const navigate = useNavigate();
 
   return (
-    <div className="p-1">
-      <div className="bg-slate-400 text-black  rounded-md p-4">
-        <header className="flex justify-between">
-          <h1 className="text-sm font-bold">{user.id}</h1>
+    <div class="container overflow-hidden text-center">
+      <div class="todo-row">
+        <header className="col">
+          <h1 className="text-sm font-bold col order-last">{user.id}</h1>
         </header>
-        <h2 className="text-sm font-bold">{user.login}</h2>
-        <span className="text-sm font-bold">{user.password}</span>
+        <div className="col">
+          <h2 className="text-sm font-bold col">{user.login}</h2>
+        </div>
+        <span className="text-sm font-bold col">{user.password}</span>
         <div className="flex gap-x-1">
           <button
-            className="bg-lime-400 px-2 py-1 text-black rounded-md"
+            className="bg-lime-400 p-2 px-2 py-1 text-black rounded-md"
             onClick={() => navigate(`/UserForm/edit/${user.id}`)}
           >
             Edit
           </button>
           <button
-            className="bg-red-500 px-2 py-1 text-black rounded-md"
+            className="bg-red-500 p-2  px-2 py-1 text-black rounded-md"
             onClick={() => deleteUser(user.id)}
           >
             Delete

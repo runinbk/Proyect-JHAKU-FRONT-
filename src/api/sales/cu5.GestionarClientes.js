@@ -1,19 +1,29 @@
 import axios from "axios";
 
 export const getClientesRequest = async () =>
-  await axios.get("http://localhost:3000/cliente");
+  await axios.get("https://backend-si1-production.up.railway.app/cliente");
 
 export const createClienteRequest = async (cliente) =>
-  await axios.post("http://localhost:3000/cliente", cliente);
+  await axios.post(
+    "https://backend-si1-production.up.railway.app/cliente",
+    cliente
+  );
 
 export const deleteClienteRequest = async (id) =>
-  await axios.delete(`http://localhost:3000/cliente/${id}`);
+  await axios.delete(
+    `https://backend-si1-production.up.railway.app/cliente/${id}`
+  );
 
 export const getClienteRequest = async (id) =>
-  await axios.get(`http://localhost:3000/cliente/${id}`);
+  await axios.get(
+    `https://backend-si1-production.up.railway.app/cliente/${id}`
+  );
 
 export const updateClienteRequest = async (id, newFiles) =>
-  await axios.put(`http://localhost:3000/cliente/${id}`, newFiles);
+  await axios.put(
+    `https://backend-si1-production.up.railway.app/cliente/${id}`,
+    newFiles
+  );
 
 // Path: src\api\sales\cu5.GestionarClientes.js
 // Compare this snippet from src\api\user\cu20.GestionarEmpleado.api.js:

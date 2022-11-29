@@ -21,12 +21,13 @@ import OrderForm from "./pages/sales.pages/cu7.GestionarPedido/OrderForm";
 import { OrderContextProvider } from "./context/sales.context/cu7.GestionarPedido/OrderProvider";
 
 import DashboardCart from "./components/DashboardCart";
-import Navbar from "./components/Navbar";
+//import Navbar from "./components/Navbar";
+import { NavbarF } from "./components/NavbarF";
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <NavbarF />
       <div>
         <UserContextProvider>
           <Routes>
